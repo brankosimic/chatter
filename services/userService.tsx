@@ -1,15 +1,13 @@
 import fetch from 'node-fetch';
 
-const api = 'https://jsonplaceholder.typicode.com';
-
 class UserService {
   getAll = async () => {
-    const response = await fetch(`${api}/users`);
+    const response = await fetch(`${process.env.API}/users`);
     return response.json();
   };
 
   get = async (userId: number) => {
-    const response = await fetch(`${api}/users/${userId}`);
+    const response = await fetch(`${process.env.API}/users/${userId}`);
     return response.json();
   };
 }

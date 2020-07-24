@@ -2,11 +2,9 @@ import fetch from 'node-fetch';
 import customMessages from '../mocked/customMessages';
 import formatter from '../utils/formatter';
 
-const api = 'https://jsonplaceholder.typicode.com';
-
 class MessageService {
   get = async (roomId: number) => {
-    const response = await fetch(`${api}/posts/${roomId}/comments`);
+    const response = await fetch(`${process.env.API}/posts/${roomId}/comments`);
     let result = await response.json();
     result = [...result, ...customMessages];
     result = formatter(result);
@@ -14,7 +12,7 @@ class MessageService {
   };
 
   post = async (roomId: number, text: string) => {
-    const response = await fetch(`${api}/comments`, {
+    const response = await fetch(`${process.env.API}/comments`, {
       method: 'POST',
       body: JSON.stringify({
         postId: roomId,
