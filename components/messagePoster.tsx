@@ -10,8 +10,23 @@ const MessageList = () => {
 
   return (
     <div>
-      <TextareaAutosize rowsMin={5} placeholder="Type a message" value={text} onChange={(event) => setText(event.target.value)} />
-      <Button variant="contained" color="primary" onClick={() => chatContext.postMessage(text)}>
+      <TextareaAutosize
+        rowsMin={5}
+        placeholder="Type a message"
+        value={text}
+        onChange={(event) => {
+          setText(event.target.value);
+          chatContext.setIsTyping(!!event.target.value);
+        }}
+      />
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={async () => {
+          await chatContext.postMessage(text);
+          setText('');
+        }}
+      >
         Post
       </Button>
     </div>

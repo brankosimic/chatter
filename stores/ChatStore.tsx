@@ -7,6 +7,7 @@ export class ChatStore {
   @observable rooms: any[] = [];
   @observable activeRoomId: number | null = null;
   @observable messages: any[] = [];
+  @observable isTyping = false;
 
   @action
   public load = async () => {
@@ -25,5 +26,11 @@ export class ChatStore {
     const message = await messageService.post(this.activeRoomId, text);
     const formatted = formatter([message]);
     this.messages = [...this.messages, ...formatted];
+    this.isTyping = false;
+  };
+
+  @action
+  public setIsTyping = (value: boolean) => {
+    this.isTyping = value;
   };
 }
