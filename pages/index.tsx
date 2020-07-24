@@ -1,10 +1,11 @@
-import Head from "next/head";
-import Layout, { siteTitle } from "../components/layout";
-import utilStyles from "../styles/utils.module.scss";
-import chatStyles from "../styles/chat.module.scss";
-import RoomList from "../components/roomList";
-import UsersAndSettings from "../components/usersAndSettings";
-import MessageList from "../components/messageList";
+import React from 'react';
+import Head from 'next/head';
+import Layout, { siteTitle } from '../components/layout';
+import utilStyles from '../styles/utils.module.scss';
+import chatStyles from '../styles/chat.module.scss';
+import RoomList from '../components/roomList';
+import UsersAndSettings from '../components/usersAndSettings';
+import MessageList from '../components/messageList';
 
 export default function Home() {
   return (

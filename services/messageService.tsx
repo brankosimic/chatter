@@ -1,8 +1,8 @@
-import fetch from "node-fetch";
-import customMessages from "../mocked/customMessages";
-import formatter from "../utils/formatter";
+import fetch from 'node-fetch';
+import customMessages from '../mocked/customMessages';
+import formatter from '../utils/formatter';
 
-const api = "https://jsonplaceholder.typicode.com";
+const api = 'https://jsonplaceholder.typicode.com';
 
 class MessageService {
   get = async (roomId: number) => {
@@ -15,15 +15,15 @@ class MessageService {
 
   post = async (roomId: number, text: string) => {
     const response = await fetch(`${api}/comments`, {
-      method: "POST",
+      method: 'POST',
       body: JSON.stringify({
         postId: roomId,
         body: text,
-        email: "anonymous",
-        name: "anonymous",
+        email: 'anonymous',
+        name: 'anonymous',
       }),
       headers: {
-        "Content-type": "application/json; charset=UTF-8",
+        'Content-type': 'application/json; charset=UTF-8',
       },
     });
     return response.json();

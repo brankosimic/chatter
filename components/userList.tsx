@@ -1,12 +1,12 @@
-import React, { useContext, useState } from "react";
-import { useRouter } from "next/router";
-import UserIcon from "@material-ui/icons/SupervisedUserCircle";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-import ListItemAvatar from "@material-ui/core/ListItemAvatar";
-import { observer } from "mobx-react";
-import { userService } from "../services/userService";
+import React, { useContext, useState } from 'react';
+import { useRouter } from 'next/router';
+import UserIcon from '@material-ui/icons/SupervisedUserCircle';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import { observer } from 'mobx-react';
+import { userService } from '../services/userService';
 
 const UserList = () => {
   const router = useRouter();

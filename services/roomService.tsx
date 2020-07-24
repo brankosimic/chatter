@@ -1,6 +1,6 @@
-import fetch from "node-fetch";
+import fetch from 'node-fetch';
 
-const api = "https://jsonplaceholder.typicode.com";
+const api = 'https://jsonplaceholder.typicode.com';
 
 class RoomService {
   get = async () => {

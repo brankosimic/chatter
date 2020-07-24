@@ -1,14 +1,14 @@
-import { observable, action } from "mobx";
+import { observable, action } from 'mobx';
 
 export class SettingsStore {
-  @observable slider: number = 30;
+  @observable slider = 30;
   @observable checks: any = {
     check1: false,
     check2: false,
     check3: false,
     check4: false,
   };
-  @observable radio: boolean = false;
+  @observable radio = false;
 
   @action
   public setSlider = (value) => {

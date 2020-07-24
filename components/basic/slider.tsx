@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import Slider from "@material-ui/core/Slider";
-import VolumeDown from "@material-ui/icons/VolumeDown";
-import VolumeUp from "@material-ui/icons/VolumeUp";
-import { settingsStore } from "../../stores";
-import { observer } from "mobx-react";
+import React, { useContext } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import Slider from '@material-ui/core/Slider';
+import VolumeDown from '@material-ui/icons/VolumeDown';
+import VolumeUp from '@material-ui/icons/VolumeUp';
+import { settingsStore } from '../../stores';
+import { observer } from 'mobx-react';
 
 const useStyles = makeStyles({
   root: {
@@ -24,7 +24,7 @@ const ChatSlider = () => {
 
   return (
     <div className={classes.root}>
-      <Typography id="continuous-slider" component={"span"} gutterBottom>
+      <Typography id="continuous-slider" component={'span'} gutterBottom>
         Volume
       </Typography>
       <Grid container spacing={2}>
@@ -32,11 +32,7 @@ const ChatSlider = () => {
           <VolumeDown />
         </Grid>
         <Grid item xs>
-          <Slider
-            value={settingsContext.slider}
-            onChange={handleChange}
-            aria-labelledby="continuous-slider"
-          />
+          <Slider value={settingsContext.slider} onChange={handleChange} aria-labelledby="continuous-slider" />
         </Grid>
         <Grid item>
           <VolumeUp />

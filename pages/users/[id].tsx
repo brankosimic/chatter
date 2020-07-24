@@ -1,14 +1,15 @@
-import { useRouter } from "next/router";
-import Layout from "../../components/layout";
-import Head from "next/head";
-import utilStyles from "../../styles/utils.module.scss";
-import { userService } from "../../services/userService";
-import { useState } from "react";
+import React from 'react';
+import { useRouter } from 'next/router';
+import Layout from '../../components/layout';
+import Head from 'next/head';
+import utilStyles from '../../styles/utils.module.scss';
+import { userService } from '../../services/userService';
+import { useState } from 'react';
 
-export default function User({ props }) {
+export default function User() {
   const router = useRouter();
   const { id } = router.query;
-  const [user, setUser] = useState<any>({ name: "" });
+  const [user, setUser] = useState<any>({ name: '' });
   if (id && !user.name) userService.get(+id).then((res) => setUser(res));
 
   return (

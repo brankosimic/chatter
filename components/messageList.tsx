@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
-import { observer } from "mobx-react";
-import { chatStore } from "../stores";
-import MessagePoster from "./messagePoster";
+import React, { useContext } from 'react';
+import { observer } from 'mobx-react';
+import { chatStore } from '../stores';
+import MessagePoster from './messagePoster';
 
 const MessageList = () => {
   const chatContext = useContext(chatStore);

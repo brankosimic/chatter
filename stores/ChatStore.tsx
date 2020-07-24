@@ -1,6 +1,6 @@
-import { observable, action } from "mobx";
-import { roomService } from "../services/roomService";
-import { messageService } from "../services/messageService";
+import { observable, action } from 'mobx';
+import { roomService } from '../services/roomService';
+import { messageService } from '../services/messageService';
 
 export class ChatStore {
   @observable rooms: any[] = [];
