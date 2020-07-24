@@ -2,6 +2,10 @@
 
 > Chatter
 
+## Demo
+
+https://chatter-weld.vercel.app/
+
 ## Build Setup
 
 ```bash
@@ -14,4 +18,11 @@ $ yarn dev
 # build for production and launch server
 $ yarn build
 $ yarn start
+```
+
+## Linting
+
+```bash
+# Checks for JS and TS errors, applies prettier formatting and auto-fixes fixable warnings
+$ yarn lint
 ```
