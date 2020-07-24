@@ -1,0 +1,26 @@
+.chat {
+  display: flex;
+  height: 100vh;
+  li {
+    cursor: pointer;
+    &:hover {
+      background-color: #f3f3f3;
+    }
+  }
+  > div {
+    width: 40%;
+  }
+  > ul {
+    width: 30%;
+  }
+  .chattabs {
+    width: 30%;
+  }
+  textarea {
+    width: 100%;
+  }
+}
+
+.active {
+  background-color: #e8e8e8;
+}
