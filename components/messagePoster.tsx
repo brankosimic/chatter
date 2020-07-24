@@ -11,7 +11,7 @@ const MessageList = () => {
   return (
     <div>
       <TextareaAutosize rowsMin={5} placeholder="Type a message" value={text} onChange={(event) => setText(event.target.value)} />
-      <Button variant="contained" color="primary" onClick={(e) => chatContext.postMessage(text)}>
+      <Button variant="contained" color="primary" onClick={() => chatContext.postMessage(text)}>
         Post
       </Button>
     </div>

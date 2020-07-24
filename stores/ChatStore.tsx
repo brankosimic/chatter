@@ -1,6 +1,7 @@
 import { observable, action } from 'mobx';
 import { roomService } from '../services/roomService';
 import { messageService } from '../services/messageService';
+import formatter from '../utils/formatter';
 
 export class ChatStore {
   @observable rooms: any[] = [];
@@ -22,6 +23,7 @@ export class ChatStore {
   @action
   public postMessage = async (text: string) => {
     const message = await messageService.post(this.activeRoomId, text);
-    this.messages = [...this.messages, message];
+    const formatted = formatter([message]);
+    this.messages = [...this.messages, ...formatted];
   };
 }
