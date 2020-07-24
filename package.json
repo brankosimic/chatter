@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
+    "check-types": "tsc --noemit",
+    "eslint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+    "lint": "yarn eslint && yarn check-types"
   },
   "dependencies": {
     "@babel/plugin-proposal-decorators": "^7.10.5",
