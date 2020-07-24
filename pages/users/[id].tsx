@@ -1,19 +1,20 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { useRouter } from 'next/router';
 import Layout from '../../components/layout';
 import Head from 'next/head';
 import utilStyles from '../../styles/utils.module.scss';
 import { userService } from '../../services/userService';
 import { useState } from 'react';
+import { User } from '../../models/user';
 
-export default function User() {
+export default function UserPage(): ReactElement {
   const router = useRouter();
   const { id } = router.query;
-  const [user, setUser] = useState<any>({ name: '' });
+  const [user, setUser] = useState<User>({ name: '' } as User);
   if (id && !user.name) userService.get(+id).then((res) => setUser(res));
 
   return (
-    <Layout home="">
+    <Layout home={false}>
       <Head>
         <title>{user.name}</title>
       </Head>

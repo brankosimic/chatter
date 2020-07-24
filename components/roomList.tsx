@@ -16,7 +16,9 @@ const RoomList = () => {
     <List>
       {chatContext.rooms.map((room) => (
         <ListItem
-          className={chatContext.activeRoomId === room.id ? chatStyles.active : ''}
+          className={
+            chatContext.activeRoomId === room.id ? chatStyles.active : ''
+          }
           key={room.id}
           alignItems="flex-start"
           onClick={() => {
@@ -26,7 +28,10 @@ const RoomList = () => {
           <ListItemAvatar>
             <MeetingRoomIcon />
           </ListItemAvatar>
-          <ListItemText primary={room.title} secondary={<React.Fragment>{room.body}</React.Fragment>} />
+          <ListItemText
+            primary={room.title}
+            secondary={<React.Fragment>{room.body}</React.Fragment>}
+          />
         </ListItem>
       ))}
     </List>

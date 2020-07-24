@@ -1,9 +1,10 @@
 import fetch from 'node-fetch';
 import customMessages from '../mocked/customMessages';
 import formatter from '../utils/formatter';
+import { Message } from '../models/message';
 
 class MessageService {
-  get = async (roomId: number) => {
+  get = async (roomId: number): Promise<Message[]> => {
     const response = await fetch(`${process.env.API}/posts/${roomId}/comments`);
     let result = await response.json();
     result = [...result, ...customMessages];
@@ -11,7 +12,7 @@ class MessageService {
     return result;
   };
 
-  post = async (roomId: number, text: string) => {
+  post = async (roomId: number, text: string): Promise<Message> => {
     const response = await fetch(`${process.env.API}/comments`, {
       method: 'POST',
       body: JSON.stringify({

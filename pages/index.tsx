@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.scss';
@@ -7,7 +7,7 @@ import RoomList from '../components/roomList';
 import UsersAndSettings from '../components/usersAndSettings';
 import MessageList from '../components/messageList';
 
-export default function Home() {
+export default function Home(): ReactElement {
   return (
     <Layout home>
       <Head>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import Head from 'next/head';
 import styles from '../styles/layout.module.scss';
 import utilStyles from '../styles/utils.module.scss';
@@ -7,12 +7,19 @@ import Link from 'next/link';
 const name = 'Chatter';
 export const siteTitle = 'Welcome to Chatter';
 
-export default function Layout({ children, home }: any) {
+interface Props {
+  children: JSX.Element[] | JSX.Element;
+  home: boolean;
+}
+export default function Layout({ children, home }: Props): ReactElement {
   return (
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="description" content="Learn how to build a personal website using Next.js" />
+        <meta
+          name="description"
+          content="Learn how to build a personal website using Next.js"
+        />
         <meta
           property="og:image"
           content={`https://og-image.now.sh/${encodeURI(
@@ -25,14 +32,22 @@ export default function Layout({ children, home }: any) {
       <header className={styles.header}>
         {home ? (
           <>
-            <img src="/images/profile.jpg" className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`} alt={name} />
+            <img
+              src="/images/profile.jpg"
+              className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
+              alt={name}
+            />
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
           </>
         ) : (
           <>
             <Link href="/">
               <a>
-                <img src="/images/profile.jpg" className={`${styles.headerImage} ${utilStyles.borderCircle}`} alt={name} />
+                <img
+                  src="/images/profile.jpg"
+                  className={`${styles.headerImage} ${utilStyles.borderCircle}`}
+                  alt={name}
+                />
               </a>
             </Link>
             <h2 className={utilStyles.headingLg}>

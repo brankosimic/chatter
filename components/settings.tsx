@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React from 'react';
 import { observer } from 'mobx-react';
 import ChatSlider from './basic/slider';
 import ChatChecks from './basic/checks';

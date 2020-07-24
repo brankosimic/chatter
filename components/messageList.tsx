@@ -15,7 +15,9 @@ const MessageList = () => {
           <p>{message.formatted}</p>
         </div>
       ))}
-      <p className={chatStyles.typewriter}>{chatContext.isTyping ? 'User is typing...' : ''}</p>
+      <p className={chatStyles.typewriter}>
+        {chatContext.isTyping ? 'User is typing...' : ''}
+      </p>
       <MessagePoster />
     </div>
   );

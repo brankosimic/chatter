@@ -10,12 +10,19 @@ const ChatRadios = () => {
   const settingsContext = useContext(settingsStore);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    settingsContext.setRadio((event.target as HTMLInputElement).value);
+    settingsContext.setRadio(
+      (event.target as HTMLInputElement).value == 'true',
+    );
   };
 
   return (
     <FormControl component="fieldset">
-      <RadioGroup aria-label="gender" name="gender1" value={settingsContext.radio} onChange={handleChange}>
+      <RadioGroup
+        aria-label="gender"
+        name="gender1"
+        value={settingsContext.radio}
+        onChange={handleChange}
+      >
         <FormControlLabel value="1" control={<Radio />} label="Female" />
         <FormControlLabel value="2" control={<Radio />} label="Male" />
         <FormControlLabel value="3" control={<Radio />} label="Other" />

@@ -18,7 +18,10 @@ const ChatSlider = () => {
   const classes = useStyles();
   const settingsContext = useContext(settingsStore);
 
-  const handleChange = (event: any, newValue: number | number[]) => {
+  const handleChange = (
+    event: React.SyntheticEvent,
+    newValue: number | number[],
+  ) => {
     settingsContext.setSlider(newValue as number);
   };
 
@@ -32,7 +35,11 @@ const ChatSlider = () => {
           <VolumeDown />
         </Grid>
         <Grid item xs>
-          <Slider value={settingsContext.slider} onChange={handleChange} aria-labelledby="continuous-slider" />
+          <Slider
+            value={settingsContext.slider}
+            onChange={handleChange}
+            aria-labelledby="continuous-slider"
+          />
         </Grid>
         <Grid item>
           <VolumeUp />

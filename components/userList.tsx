@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import UserIcon from '@material-ui/icons/SupervisedUserCircle';
 import List from '@material-ui/core/List';
@@ -7,10 +7,11 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import { observer } from 'mobx-react';
 import { userService } from '../services/userService';
+import { User } from '../models/user';
 
 const UserList = () => {
   const router = useRouter();
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState<User[]>([]);
   if (!users.length) userService.getAll().then((res) => setUsers(res));
 
   return (

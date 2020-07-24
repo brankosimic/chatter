@@ -1,4 +1,7 @@
-const formatter = (result) => {
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Message } from '../models/message';
+
+const formatter = (result: Message[]): Message[] => {
   result.forEach((message) => {
     message.formatted = format(message.body);
   });
@@ -6,7 +9,7 @@ const formatter = (result) => {
   return result;
 };
 
-const format = (data) => {
+const format = (data: any) => {
   switch (data.constructor) {
     case String:
       return data;
@@ -19,15 +22,18 @@ const format = (data) => {
   }
 };
 
-const formatObject = (obj) => {
+const formatObject = (obj: any) => {
   let formatted = obj.tmpl || '';
   if (obj.tmpl && obj.data) {
-    Object.keys(obj.data).forEach((key) => (formatted = formatted.replace(new RegExp(`{${key}}`), obj.data[key])));
+    Object.keys(obj.data).forEach(
+      (key) =>
+        (formatted = formatted.replace(new RegExp(`{${key}}`), obj.data[key])),
+    );
   }
   return formatted;
 };
 
-const formatArray = (arr) => {
+const formatArray = (arr: any[]) => {
   const joined = arr.map((data) => format(data)).join('\n');
   return joined;
 };
